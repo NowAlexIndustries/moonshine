@@ -5,18 +5,23 @@
 
 header {
     background-color: darkcyan;
-    padding-top: 10px;
-    padding-bottom: 15px;
+    padding: 20px;
+}
+
+#headTitle {
+    font-family:Arial, Helvetica, sans-serif;
+    color: white;
+    font: bold;
     text-align: center;
 }
 
-.title {
-    font-family:Arial, Helvetica, sans-serif;
+#menuBtn {
+    float: left;
 }
 
-.kte {
-    margin: 10px;
-    padding: 10px;
+#fill-em {
     color: red;
-    font: bold;
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
 }
