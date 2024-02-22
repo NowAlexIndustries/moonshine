@@ -8,19 +8,26 @@
     <meta name="application-name" content="index page">
     <meta name="description" content="Navigate between moonshining related tools">
     <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="style.css">
     <title>Pálinkafőző Home</title>
 </head>
 <body>
     <header>
-        <button id="menuBtn">Menu</button>
+        <button id="menuBtn" onclick="toggleMenu()">Menu</button>
+        <ul style="display: none">
+            <li>fokolás</li>
+            <li>keverés</li>
+            <li>higítás</li>
+        </ul>
         <h1 id="headTitle">Pálinka főzés</h1>
     </header>
     <body>
         <p id="fill-em">Szia Emma <3<3</p>
+        <p id="introduction"> lorem ipsum bevezeto</p>
     </body>
     <footer>
-
+        <p id="creds">credits: &copy;</p>
     </footer>
 </body>
 </html>
