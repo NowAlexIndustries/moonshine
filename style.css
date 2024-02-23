@@ -4,8 +4,14 @@
 }
 
 header {
-    background-color: darkcyan;
-    padding: 20px;
+    position: absolute;
+    top 0;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100vh;
 }
 
 #headTitle {
@@ -24,4 +30,10 @@ header {
     font-size: xx-large;
     font-weight: bolder;
     text-align: center;
+}
+
+.box {
+    background-color: darkcyan;
+    padding: 20px;
+    color: white;
 }
