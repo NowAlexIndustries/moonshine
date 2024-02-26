@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta name="author" content="dari">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="alcohol percentage calculator page">
+    <meta name="description" content="Calculate alcohol percentage">
+    <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/base.css">
+    <script src="../script/keveres.js"></script>
+    <title>Pálinkafőző alkoholkeverés</title>
+</head>
+<body>
+    
+    <div id="content">
+        <ul id="alcohols">
+            <!--initial 2 fields-->
+            <li id="alcohol_0" class="alcoholField">
+                <label for="quantity_0">mennyiség</label>
+                <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+                <label for="percent_0">alkoholszázalék</label>
+                <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+            </li>
+            <li id="alcohol_1" class="alcoholField">
+                <label for="quantity_1">mennyiség</label>
+                <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
+                <label for="percent_1">alkoholszázalék</label>
+                <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
+            </li>
+        </ul>
+        <div class="controls">
+            <button class="btn circle" onclick="addAlcohol()">+</button>
+            <button class="btn" onclick="calclulateMix()">Keverés</button>
+            <button class="btn" onclick="reset_page()">Mindent torol</button>
+        </div>
+    </div>
+
+</body>
+</html>
