@@ -4,14 +4,21 @@
 }
 
 header {
-    position: absolute;
-    top 0;
+    justify-content: flex-start;
 }
 
 footer {
     position: absolute;
+    display: flex;
+    flex-direction: row;
     bottom: 0;
-    width: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
 }
 
 #headTitle {
@@ -30,6 +37,10 @@ footer {
     font-size: xx-large;
     font-weight: bolder;
     text-align: center;
+}
+
+#footer-cont {
+    justify-content: center;
 }
 
 .box {
