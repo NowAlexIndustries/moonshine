@@ -1,39 +1,6 @@
-header {
-    justify-content: space-between;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-}
-
-footer {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    bottom: 0;
-    width: 100%;
-}
-
-#page-container {
-    position: relative;
-    min-height: 100vh;
-}
-
-#headTitle {
-    text-align: center;
-    justify-self: center;
-}
-
-#menuBtn {
-    float: left;
-}
-
 #fill-em {
     color: red;
     font-size: xx-large;
     font-weight: bolder;
     text-align: center;
-}
-
-#footer-cont {
-    justify-content: center;
 }
