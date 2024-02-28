@@ -14,29 +14,50 @@
     <title>Pálinkafőző alkoholkeverés</title>
 </head>
 <body>
-    
-    <div id="content">
-        <ul id="alcohols">
-            <!--initial 2 fields-->
-            <li id="alcohol_0" class="alcoholField">
-                <label for="quantity_0">mennyiség</label>
-                <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
-                <label for="percent_0">alkoholszázalék</label>
-                <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
-            </li>
-            <li id="alcohol_1" class="alcoholField">
-                <label for="quantity_1">mennyiség</label>
-                <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
-                <label for="percent_1">alkoholszázalék</label>
-                <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
-            </li>
-        </ul>
-        <div class="controls">
-            <button class="btn circle" onclick="addAlcohol()">+</button>
-            <button class="btn" onclick="calclulateMix()">Keverés</button>
-            <button class="btn" onclick="reset_page()">Mindent torol</button>
-        </div>
+    <div id="page-container">
+        <header class="box-cyan">
+            <nav>
+                <button id="menuBtn" onclick="toggleMenu()">Menu</button>
+                <!--<ul style="display: none">-->
+                <ul>
+                    <li><a href="../index.html">Főoldal</a></li>
+                    <li><a href="#">Fokolás</a></li>
+                    <li><a href="keveres.html">Keverés</a></li>
+                    <li><a href="higitas.html">Higítás</a></li>
+                </ul>
+            </nav>
+            <h1 class="title">Pálinka főzés</h1>
+            <button id="themeBtn" onclick="toggleTheme()">Dark</button>
+        </header>
+        <main class="back-cyan">
+            <div id="content">
+                <ul id="alcohols">
+                    <!--initial 2 fields-->
+                    <li id="alcohol_0" class="alcoholField">
+                        <label for="quantity_0">mennyiség</label>
+                        <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+                        <label for="percent_0">alkoholszázalék</label>
+                        <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+                    </li>
+                    <li id="alcohol_1" class="alcoholField">
+                        <label for="quantity_1">mennyiség</label>
+                        <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
+                        <label for="percent_1">alkoholszázalék</label>
+                        <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
+                    </li>
+                </ul>
+                <div class="controls">
+                    <button class="btn circle" onclick="addAlcohol()">+</button>
+                    <button class="btn" onclick="calclulateMix()">Keverés</button>
+                    <button class="btn" onclick="reset_page()">Mindent torol</button>
+                </div>
+            </div>
+        </main>
+        <footer class="box-cyan">
+            <div id="footer_cont">
+                <p id="creds">credits: &copy;</p>
+            </div>
+        </footer>
     </div>
-
 </body>
 </html>
