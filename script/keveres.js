@@ -33,7 +33,7 @@ function addAlcohol() {
     // add new field
     let newItem = document.createElement('li');
     newItem.id = `alcohol_${i}`;
-    newItem.className = 'alcoholField';
+    newItem.className = 'alcoholField inputBlock';
     newItem.innerHTML = `
     <label for="quantity_${i}">mennyiség</label>
     <input type="text" class="quantity" placeholder="0" name="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">

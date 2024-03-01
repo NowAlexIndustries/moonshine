@@ -24,6 +24,10 @@ header {
     flex-direction: row;
 }
 
+main {
+    min-height: 100%;
+}
+
 footer {
     position: absolute;
     display: flex;

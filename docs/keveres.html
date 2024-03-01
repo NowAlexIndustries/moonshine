@@ -10,6 +10,7 @@
     <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/keveres.css">
     <script src="../script/keveres.js"></script>
     <title>Pálinkafőző alkoholkeverés</title>
 </head>
@@ -22,7 +23,7 @@
                 <ul>
                     <li><a href="../index.html">Főoldal</a></li>
                     <li><a href="#">Fokolás</a></li>
-                    <li><a href="keveres.html">Keverés</a></li>
+                    <li><span>Keverés</span></li>
                     <li><a href="higitas.html">Higítás</a></li>
                 </ul>
             </nav>
@@ -33,13 +34,13 @@
             <div id="content">
                 <ul id="alcohols">
                     <!--initial 2 fields-->
-                    <li id="alcohol_0" class="alcoholField">
+                    <li id="alcohol_0" class="alcoholField inputBlock">
                         <label for="quantity_0">mennyiség</label>
                         <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
                         <label for="percent_0">alkoholszázalék</label>
                         <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
                     </li>
-                    <li id="alcohol_1" class="alcoholField">
+                    <li id="alcohol_1" class="alcoholField inputBlock">
                         <label for="quantity_1">mennyiség</label>
                         <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
                         <label for="percent_1">alkoholszázalék</label>
