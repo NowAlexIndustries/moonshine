@@ -3,7 +3,7 @@
 }
 
 .inputBlock {
-    min-height: 50px;
+    min-height: 7vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

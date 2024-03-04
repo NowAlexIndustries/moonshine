@@ -8,13 +8,13 @@
 .box-cyan {
     background-color: darkcyan;
     color: whitesmoke;
-    padding: 20px;
+    padding: 3vh;
 }
 
 .back-cyan {
     background-color: whitesmoke;
     color: darkcyan;
-    padding: 10px;
+    padding: 1vh;
 }
 
 header {
@@ -44,4 +44,12 @@ body {
 .title {
     text-align: center;
     justify-self: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-between;
 }

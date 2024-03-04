@@ -36,7 +36,7 @@ function outputHtml(givenId, text) {
         let resultAlcohol = document.createElement('div');
         resultAlcohol.id = givenId;
         resultAlcohol.innerHTML = text;
-        document.getElementById('content').appendChild(resultAlcohol);
+        document.getElementById('output').replaceWith(resultAlcohol);
     }
 }
 
@@ -85,7 +85,7 @@ function calclulateDilution() {
         }
     }
 
-    outputHtml('resultAlcohol', innerHtmlAlc);
+    outputHtml('output', innerHtmlAlc);
 }
 
 function reset_page() {
