@@ -72,9 +72,9 @@ function calclulateDilution() {
             const folyadek = pct * qt / dpct;
             const plusszFolyadek = folyadek - qt;
             innerHtmlAlc = `
-                mennyiség: <span id="resultQuantity">${folyadek}</span>
-                <br>
-                hozzáadandó mennyiség: <span id="resultQuantityPlus">${plusszFolyadek}</span>
+            <div id="LeftRes" class="result-container"><span>Mennyiség: </span><span id="resultQuantity">${folyadek}</span></div>
+            <hr id="sep">
+            <div id="RigthRes" class="result-container"><span>Hozzáadandó mennyiség: </span><span id="resultQuantityPlus">${plusszFolyadek}</span></div>
             `;
         } else {
             if (pct == 0) {

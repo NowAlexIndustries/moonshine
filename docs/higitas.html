@@ -31,21 +31,20 @@
     </header>
     <main class="back-cyan">
         <div id="content">
-            <div class="input-field">
-                <label for="quantity">mennyiseg</label>
-                <input type="text" placeholder="0" name="quantity" id="quantity" inputmode="decimal" oninput="validateQuantity(event)">
-                <label for="percent">alkoholszázalék</label>
-                <input type="text" placeholder="0" name="percent" id="percentage" inputmode="decimal" oninput="validatePercent(event)">
-                <label for="desiredPercent">kivant alkoholszazalek</label>
-                <input type="text" placeholder="0" name="desiredPercent" id="desiredPercentage" inputmode="decimal" oninput="validatePercent(event)">
+            <div class="input-field body-container">
+                <label class="input" for="quantity">Mennyiség</label>
+                <input class="input" type="text" placeholder="0" name="quantity" id="quantity" inputmode="decimal" oninput="validateQuantity(event)"><br>
+                <label class="input" for="percent">Alkoholszázalék</label>
+                <input class="input" type="text" placeholder="0" name="percent" id="percentage" inputmode="decimal" oninput="validatePercent(event)"><br>
+                <label class="input" for="desiredPercent">Kívánt alkoholszázalék</label>
+                <input class="input" type="text" placeholder="0" name="desiredPercent" id="desiredPercentage" inputmode="decimal" oninput="validatePercent(event)"><br>
             </div>
-            <div class="controls">
-                <button class="btn" onclick="calclulateDilution()">Higítás</button>
-                <button class="btn" onclick="reset_page()">Mindent torol</button>
+            <div class="controls body-container">
+                <button class="btn button-style1" onclick="calclulateDilution()">Higítás</button>
+                <button class="btn button-style1" onclick="reset_page()">Mindent töröl</button>
             </div>
-            <div id="output">
+            <div id="output" class="body-container">
                 <!--Placeholder for page outputs-->
-                &nbsp;
             </div>
         </div>
     </main>

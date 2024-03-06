@@ -1,8 +1,65 @@
-.input-field {
+.body-container {
+    padding: 2vh;
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.input-field {
+    flex-direction: column;
+    /*justify-content: center;*/
+    align-content: center;
+}
+
+.input {
+    width: 40%;
+}
+
+input.input {
+    padding: 5px;
+    height: calc(25px + .5vh);
+    font-size: calc(20px + .5vh);
+}
+
+label.input {
+    text-align: center;
+    font-size: calc(16px + 1vw);
+}
+
+.controls {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.result-container {
+    width: 100%;
+    padding-inline: calc(2vw + 1vh);
+    min-width: 1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #output {
+    align-self: center;
+    min-width: 60%;
     min-height: 6vh;
-    align-content: center;
+    display: flex;
+    flex-direction: row;
+    /*align-content: space-between;*/
+    justify-content: center;
+}
+
+#LeftRes {
+    text-align: right;
+}
+
+#RightRes {
+    text-align: left;
+}
+
+#sep {
+    width: 90vw;
+    color: darkcyan;
+    border: solid;
+    border-width: thin;
 }

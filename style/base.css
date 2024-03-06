@@ -9,12 +9,32 @@
     background-color: darkcyan;
     color: whitesmoke;
     padding: 3vh;
+    min-height: 8vh;
 }
 
 .back-cyan {
     background-color: whitesmoke;
     color: darkcyan;
     padding: 1vh;
+}
+
+.button-style1 {
+    min-width: 15vw;
+    min-height: 4vh;
+    margin-inline: 2vw;
+    background-color: darkcyan;
+    color: whitesmoke;
+
+    border: solid;
+    border-color: rgb(0, 94, 94);
+    border-width: 2px;
+    border-radius: .7vw;
+
+    font-weight: lighter;
+}
+
+.button-style2 {
+    /*nothing here*/
 }
 
 header {
@@ -41,7 +61,16 @@ body {
     min-height: 100vh;
 }
 
+div {
+    width: 100%;
+}
+
+h1 {
+    font-weight: lighter;
+}
+
 .title {
+    font-size: calc(22px + 3vw);
     text-align: center;
     justify-self: center;
 }
