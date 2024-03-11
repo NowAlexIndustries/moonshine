@@ -20,3 +20,54 @@ function interpolate2DArray(data, x, y) {
 
     return interpolatedValue;
 }
+
+function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
+    return ((value - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin) + outputMin;
+}
+
+const alc = 'az alkoholszint';
+const szaz = 'az alkoholszázalék';
+
+const low = 'tul kicsi';
+const big = 'tul nagy'
+
+function higitasHandler(data, x, y, minX, maxX, minY, maxY) {
+    
+    let alcError = '';
+    let xError = true;
+    if (x < minX) {
+        alcError = low + ' ' + alc;
+    } else if (x > maxX) {
+        alcError = big + ' ' + alc;
+    } else {
+        xError = false;
+    }
+
+    let szazError = '';
+    let yError = true;
+    if (y < minY) {
+        szazError = low + ' ' + szaz;
+    } else if (y > maxY) {
+        szazError = big + ' ' + szaz;
+    } else {
+        szazError = false;
+    }
+
+    if (alcError && szazError) {
+        //capitalize sentence with css
+        return alcError + ' és ' + szazError + '!';
+    }
+
+    if (alcError) {
+        return alcError + '!';
+    }
+
+    if (szazError) {
+        return szazError + '!';
+    }
+
+    const x0 = mapRange(x, minX, maxX, 0, data.length);
+    const y0 = mapRange(y, minY, maxY, 0, data[0].length);
+
+    return interpolate2DArray(data, x0, y0);
+}
