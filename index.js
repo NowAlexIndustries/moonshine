@@ -1,5 +1,6 @@
 
 let theme;
+let themeToggleBtn = document.getElementById('themeBtn');
 
 // update copyright current year when site loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -10,15 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
    /* checks if the theme stored in localStorage is dark
    if yes apply the dark theme to the body */
-   if (theme === "dark") document.body.classList.add("dark");
-
-   // event listener stops when the change theme button is clicked
-   toggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-      if (theme === "dark") {
-      window.localStorage.setItem("theme", "light");
-      } else window.localStorage.setItem("theme", "dark");
-   });
+   if (theme === "dark") {
+      document.body.classList.add("dark");
+   } else {
+      themeToggleBtn.src = 'assets/sun.png';
+   };
 
 }, false);
 
@@ -26,7 +23,9 @@ function toggleTheme() {
    document.body.classList.toggle("dark");
    if (theme === "dark") {
       window.localStorage.setItem("theme", "light");
+      themeToggleBtn.src = 'assets/sun.png';
    } else {
       window.localStorage.setItem("theme", "dark");
+      themeToggleBtn.src = 'assets/moon.png';
    }
 }
