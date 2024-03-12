@@ -1,4 +1,5 @@
 function interpolate2DArray(data, x, y) {
+    //bilinear interpolation, maybe switch to bicubic interpolation
     // Get the indices of the surrounding values
     const x0 = Math.floor(x);
     const x1 = Math.ceil(x);
