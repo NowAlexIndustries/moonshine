@@ -1,20 +1,98 @@
+/*#page-container {
+    display: flex;
+    flex-direction: column;
+}*/
+
 #alcohols {
     width: auto;
 }
 
-.inputBlock {
-    min-height: 7vh;
+#content {
+    padding: 1vw;
+}
+
+.alcoholField {
+    min-height: 4vh;
+    min-height: 2.1vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.controls {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-content: center;
-    flex-wrap: wrap;
+    padding: 1vh;
+    padding-inline: 0;
+
+    border-top-color: darkcyan;
+    border-top-style: solid;
+    border-top-width: thin;
+}
+
+.sideBtn {
+    width: 2vw;
+    height: 2vw;
+    background-color: darkcyan;
+    color: black;
+
+    border: solid;
+    border-color: rgb(0, 94, 94);
+    border-width: 2px;
+    border-radius: .7vw;
+
+    font-weight: lighter;
+}
+
+.placeholder {
+    width: 2vw;
+    height: 2vw;
+}
+
+/*
+.sepHold {
+    align-content: center;
+}
+
+.sep {
+    width: 100%;
+    color: darkcyan;
+    border-style: dashed;
+    border-width: thin;
+}*/
+
+.msep {
+    width: 100%;
+    color: darkcyan;
+    border-style: solid;
+    border-width: thin;
 }
 
 label {
     height: min-content;
+    /*align-self: inherit;*/
 }
 
 input {
     height: min-content;
+    /*align-self: inherit;*/
 }
+
+li {
+    list-style-type: none;
+    border-top-color: darkcyan;
+    border-top-style: dashed;
+    border-top-width: thin; 
+}
+
+li:first-child {
+    border-top: none;
+}
+/*
+footer {
+    justify-self: flex-end;
+}*/

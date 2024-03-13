@@ -34,23 +34,28 @@
             <div id="content">
                 <ul id="alcohols">
                     <!--initial 2 fields-->
-                    <li id="alcohol_0" class="alcoholField inputBlock">
-                        <label for="quantity_0">mennyiség</label>
-                        <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
-                        <label for="percent_0">alkoholszázalék</label>
-                        <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+                    <li id="alcohol_0" class="alcoholField">
+                            <label for="quantity_0">Mennyiség</label>
+                            <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+                            <label for="percent_0">Alkoholszázalék</label>
+                            <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+                            <div class="placeholder">&nbsp</div>
                     </li>
-                    <li id="alcohol_1" class="alcoholField inputBlock">
-                        <label for="quantity_1">mennyiség</label>
+                    <li id="alcohol_1" class="alcoholField">
+                        <label for="quantity_1">Mennyiség</label>
                         <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
-                        <label for="percent_1">alkoholszázalék</label>
+                        <label for="percent_1">Alkoholszázalék</label>
                         <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
+                        <div class="placeholder">&nbsp</div>
                     </li>
                 </ul>
                 <div class="controls">
-                    <button class="btn circle" onclick="addAlcohol()">+</button>
-                    <button class="btn" onclick="calclulateMix()">Keverés</button>
-                    <button class="btn" onclick="reset_page()">Mindent torol</button>
+                    <button class="sideBtn" onclick="addAlcohol()">+</button>
+                    <button class="button-style1" onclick="calclulateMix()">Keverés</button>
+                    <button class="sideBtn" onclick="reset_page()"><img src="" alt="Kuka icon"></button>
+                </div>
+                <div id="output">
+                    <!--Placeholder for results-->
                 </div>
             </div>
         </main>
