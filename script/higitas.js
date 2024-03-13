@@ -87,7 +87,3 @@ function calclulateDilution() {
 
     outputHtml('resultAlcohol', innerHtmlAlc);
 }
-
-function reset_page() {
-    location.reload(); // reload page
-}

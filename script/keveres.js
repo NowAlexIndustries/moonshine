@@ -52,7 +52,8 @@ function addAlcohol() {
             if (!existingChild) {
                 let delBtn = document.createElement('button');
                 delBtn.className = 'delBtn';
-                delBtn.innerText = 'torol';
+                delBtn.setAttribute("aria-label", "alkohol törlése");
+                delBtn.innerHTML = '<span class="bar"></span><span class="bar"></span>';
                 delBtn.onclick = function () { deleteField(field.id); };
                 field.appendChild(delBtn);
             }
@@ -122,8 +123,4 @@ function calclulateMix() {
     `;
     document.getElementById('content').appendChild(resultAlcohol);
     isThereResult = true;
-}
-
-function reset_page() {
-    location.reload(); // reload page
 }
