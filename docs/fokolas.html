@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta name="author" content="dari">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="application-name" content="dilution calculator page">
+    <meta name="description" content="Calculate alcohol dilution">
+    <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+    <link rel="stylesheet" href="../style/base.css">
+    <script src="../script/fokolas.js"></script>
+    <script src="../script/global.js"></script>
+    <title>Pálinkafőző higítás</title>
+</head>
+<body>
+    <div id="page-container">
+        <header class="box-cyan">
+            <nav>
+                <button id="menuBtn" onclick="toggleMenu()">Menu</button>
+                <!--<ul style="display: none">-->
+                <ul>
+                    <li><a href="#">Fokolás</a></li>
+                    <li><a href="keveres.html">Keverés</a></li>
+                    <li><a href="higitas.html">Higítás</a></li>
+                </ul>
+            </nav>
+            <h1 class="title">Pálinka főzés</h1>
+            <button id="themeBtn" onclick="toggleTheme()">Dark</button>
+        </header>
+        <main class="back-cyan">
+            <div id="content">
+                <div class="input-field">
+                    <label for="quantity">mennyiseg</label>
+                    <input type="text" placeholder="0" name="quantity" id="quantity" inputmode="decimal" oninput="validateQuantity(event)">
+                    <label for="percent">alkoholszázalék</label>
+                    <input type="text" placeholder="0" name="percent" id="percentage" inputmode="decimal" oninput="validatePercent(event)">
+                    <label for="desiredPercent">kivant alkoholszazalek</label>
+                    <input type="text" placeholder="0" name="desiredPercent" id="desiredPercentage" inputmode="decimal" oninput="validatePercent(event)">
+                </div>
+                <div class="controls">
+                    <button class="btn" onclick="calclulateDilution()">Higítás</button>
+                    <button class="btn" onclick="reset_page()">Mindent torol</button>
+                </div>
+            </div>
+        </main>
+        <footer class="box-cyan">
+            <div id="footer_cont">
+                <p id="creds">credits: Copyright &copy; <span id="copyright-year"></span>. [COMPANY NAME]. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
