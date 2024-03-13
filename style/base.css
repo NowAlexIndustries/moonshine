@@ -32,10 +32,10 @@
 
     font-weight: lighter;
 }
-
+/*
 .button-style2 {
-    /*nothing here*/
-}
+    nothing here
+}*/
 
 header {
     justify-content: space-between;
@@ -46,18 +46,22 @@ header {
 
 main {
     min-height: 100%;
+    flex: 1;
 }
 
 footer {
-    position: absolute;
+    flex-shrink: 0;
+    /*position: absolute;
+    bottom: 0;*/
     display: flex;
     flex-direction: row;
-    bottom: 0;
     width: 100%;
 }
 
 body {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    /*position: relative;*/
     min-height: 100vh;
 }
 
@@ -81,4 +85,10 @@ h1 {
     flex-wrap: wrap;
     align-content: center;
     justify-content: space-between;
+}
+
+#page-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }

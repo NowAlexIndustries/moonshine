@@ -1,3 +1,8 @@
+
+:root {
+    --btn-size: calc(1vw + 20px)
+}
+
 /*#page-container {
     display: flex;
     flex-direction: column;
@@ -12,8 +17,8 @@
 }
 
 .alcoholField {
-    min-height: 4vh;
-    min-height: 2.1vw;
+    /*min-height: 4vh;
+    min-height: 2.1vw;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,8 +40,8 @@
 }
 
 .sideBtn {
-    width: 2vw;
-    height: 2vw;
+    width: var(--btn-size);
+    height: var(--btn-size);
     background-color: darkcyan;
     color: black;
 
@@ -49,8 +54,8 @@
 }
 
 .placeholder {
-    width: 2vw;
-    height: 2vw;
+    width: var(--btn-size);
+    height: var(--btn-size);
 }
 
 /*
