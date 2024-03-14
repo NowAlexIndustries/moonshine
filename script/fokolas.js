@@ -1,3 +1,26 @@
+
+const minAlcoholSzazalek = 10;
+const maxAlcoholSzazalek = 100;
+
+const minHomerseklet = 10;
+const maxHomerseklet = 100;
+
+function validatePercent(event) {
+    const decimalPattern = /^[0-9]*[.,]?[0-9]*$/;
+    const input = event.target.value;
+
+    if (!decimalPattern.test(input)) {
+        event.target.value = input.slice(0, -1); // Remove the last character (which is invalid)
+    }
+
+    event.target.value = event.target.value.replace(/^00+/, '0'); // remove leading zeros (except 1)
+
+    // replace value to 100, if bigger than 100
+    if (parseFloat(event.target.value) > 100) {
+        ////////////////////
+    }
+}
+
 function interpolate2DArray(data, x, y) {
     //bilinear interpolation, maybe switch to bicubic interpolation
     // Get the indices of the surrounding values
@@ -71,4 +94,9 @@ function higitasHandler(data, x, y, minX, maxX, minY, maxY) {
     const y0 = mapRange(y, minY, maxY, 0, data[0].length);
 
     return interpolate2DArray(data, x0, y0);
+}
+
+function calculateFokolas() {
+    let homerseklet = parseFloat(document.getElementById('idk').value);
+    let mert_alkoholszazalek = parseFloat(document.getElementById('idk').value);
 }
