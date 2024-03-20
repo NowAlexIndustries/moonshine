@@ -8,10 +8,11 @@
     <meta name="application-name" content="alcohol percentage calculator page">
     <meta name="description" content="Calculate alcohol percentage">
     <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../style/base.css">
     <link rel="stylesheet" href="../style/keveres.css">
     <script src="../script/keveres.js"></script>
+    <script src="../script/global.js"></script>
     <title>Pálinkafőző alkoholkeverés</title>
 </head>
 <body>
@@ -22,13 +23,13 @@
                 <!--<ul style="display: none">-->
                 <ul>
                     <li><a href="../index.html">Főoldal</a></li>
-                    <li><a href="#">Fokolás</a></li>
+                    <li><a href="fokolas.html">Fokolás</a></li>
                     <li><span>Keverés</span></li>
                     <li><a href="higitas.html">Higítás</a></li>
                 </ul>
             </nav>
             <h1 class="title">Pálinka főzés</h1>
-            <button id="themeBtn" onclick="toggleTheme()">Dark</button>
+            <img src="../assets/moon.png" id="themeBtn" onclick="toggleTheme()" width="30px" alt="switch to dark theme">
         </header>
         <main class="back-cyan">
             <div id="content">
@@ -50,7 +51,7 @@
                     </li>
                 </ul>
                 <div class="controls">
-                    <button class="sideBtn" onclick="addAlcohol()">+</button>
+                    <button class="btn circle addBtn" onclick="addAlcohol()" aria-label="új alkohol hozzáadása"><span class="br"></span><span class="br"></span></button>
                     <button class="button-style1" onclick="calclulateMix()">Keverés</button>
                     <button class="sideBtn" onclick="reset_page()"><img src="" alt="Kuka icon"></button>
                 </div>
@@ -62,7 +63,7 @@
     </div>
     <footer class="box-cyan">
         <div id="footer_cont">
-            <p id="creds">credits: &copy;</p>
+            <p id="creds">credits: Copyright &copy; <span id="copyright-year"></span>. [COMPANY NAME]. All rights reserved.</p>
             <p id="gpt"> God bless the GPT</p>
         </div>
     </footer>

@@ -101,3 +101,80 @@ li:first-child {
 footer {
     justify-self: flex-end;
 }*/
+.delBtn {
+    box-sizing: border-box;
+    width: 1.3rem;
+    height: 1.3rem;
+    position: relative;
+    cursor: pointer;
+    background: red;
+    border: solid darkred 3px;
+    border-radius: 50%;
+    padding: 0;
+    transition: transform 0.2s ease-in-out, background-color 0.18s ease-in-out, border-width 0.18s ease-in-out, padding 0.18s ease-in-out;
+}
+
+.delBtn:hover {
+    background: darkred;
+    border: none
+}
+
+.delBtn:active {
+    transform: scale(0.9);
+}
+  
+.bar {
+    position: absolute;
+    width: 80%;
+    height: 0.3rem;
+    background-color: whitesmoke;
+    transform-origin: center;
+    border-radius: 0.15rem;
+}
+  
+.bar:nth-child(1) {
+    transform: translateY(-50%) translateX(-50%) rotate(45deg);
+}
+  
+.bar:nth-child(2) {
+    transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+}
+
+.addBtn {
+    box-sizing: border-box;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    cursor: pointer;
+    background: green;
+    border: solid darkgreen 3px;
+    border-radius: 50%;
+    padding: 0;
+    transition: transform 0.2s ease-in-out, background-color 0.18s ease-in-out, border-width 0.18s ease-in-out, padding 0.18s ease-in-out;
+}
+
+.addBtn:hover {
+    background: darkgreen;
+    border: none;
+}
+
+.addBtn:active {
+    transform: scale(0.9);
+}
+
+.br {
+    position: absolute;
+    width: 80%;
+    height: 0.6rem;
+    background-color: whitesmoke;
+    transform-origin: center;
+    border-radius: 0.3rem;
+}
+  
+.br:nth-child(1) {
+    transform: translateY(-50%) translateX(-50%) rotate(90deg);
+}
+  
+.br:nth-child(2) {
+    transform: translateY(-50%) translateX(-50%);
+}

@@ -5,16 +5,40 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+/* Definition of colors */
+/*error: elosszor appliolja mindig a white themet, aztan valt darkra, ha frissitjuk az oldalt*/
+body {
+    /* text colors */
+    --text-color: #222;
+
+    /* background colors */
+    --bg-primary-color: whitesmoke;
+    --bg-secondary-color: darkcyan;
+
+    background-color: var(--bg-primary-color);
+
+    display: flex;
+    flex-direction: column;
+    /*position: relative;*/
+    min-height: 100vh;
+}
+
+.dark {
+    --text-color: whitesmoke;
+    --bg-primary-color: #222;
+    --bg-secondary-color: darkcyan;
+}
+
 .box-cyan {
-    background-color: darkcyan;
+    background-color: var(--bg-secondary-color);
     color: whitesmoke;
     padding: 3vh;
     min-height: 8vh;
 }
 
 .back-cyan {
-    background-color: whitesmoke;
-    color: darkcyan;
+    background-color: var(--bg-secondary-color);
+    color: var(--text-color);
     padding: 1vh;
 }
 
@@ -56,13 +80,6 @@ footer {
     display: flex;
     flex-direction: row;
     width: 100%;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    /*position: relative;*/
-    min-height: 100vh;
 }
 
 div {

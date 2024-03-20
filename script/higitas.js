@@ -49,45 +49,47 @@ function calclulateDilution() {
     if (isNaN(qt)) {
         qt = 0;
     }
-    if (isNaN(pct)) {
-        pct = 0;
-    }
-    if (isNaN(dpct)) {
-        dpct = 0;
-    }
 
     let innerHtmlAlc;
-
-    if (pct < dpct) {
-        innerHtmlAlc = 'Nem higítható töményebbre, mint ami alapból volt.';
-        // legyen-e benne tomenyites is?
-    } else if (pct == dpct) {
-        if (pct == 0) {
-            innerHtmlAlc = 'Bármennyi folyadékot hozzaadhatsz, hogy a 0%-os alkohol 0%-os maradjon.';
-        } else {
-            innerHtmlAlc = 'Hogy ha ugyan olyan töményre akarod, mint alapból, akkor nem kell folyadékot hozzáadni.';
-        }
+    
+    if (qt == 0) {
+        innerHtmlAlc = 'Nem higithatsz 0 mennyiségű alkoholt.';
     } else {
-        if (dpct > 0) {
-            const folyadek = pct * qt / dpct;
-            const plusszFolyadek = folyadek - qt;
-            innerHtmlAlc = `
-            <div id="LeftRes" class="result-container"><span>Mennyiség: </span><span id="resultQuantity">${folyadek}</span></div>
-            <hr id="sep">
-            <div id="RigthRes" class="result-container"><span>Hozzáadandó mennyiség: </span><span id="resultQuantityPlus">${plusszFolyadek}</span></div>
-            `;
-        } else {
+
+        if (isNaN(pct)) {
+            pct = 0;
+        }
+        if (isNaN(dpct)) {
+            dpct = 0;
+        }
+        
+        if (pct < dpct) {
+            innerHtmlAlc = 'Nem higítható töményebbre, mint ami alapból volt.';
+            // legyen-e benne tomenyites is?
+        } else if (pct == dpct) {
             if (pct == 0) {
                 innerHtmlAlc = 'Bármennyi folyadékot hozzaadhatsz, hogy a 0%-os alkohol 0%-os maradjon.';
             } else {
-                innerHtmlAlc = 'Nem allithato 0%-os alkohol nem 0%-os alkoholból.';
+                innerHtmlAlc = 'Hogy ha ugyan olyan töményre akarod, mint alapból, akkor nem kell folyadékot hozzáadni.';
+            }
+        } else {
+            if (dpct > 0) {
+                const folyadek = pct * qt / dpct;
+                const plusszFolyadek = folyadek - qt;
+                innerHtmlAlc = `
+                <div id="LeftRes" class="result-container"><span>Mennyiség: </span><span id="resultQuantity">${folyadek}</span></div>
+                <hr id="sep">
+                <div id="RigthRes" class="result-container"><span>Hozzáadandó mennyiség: </span><span id="resultQuantityPlus">${plusszFolyadek}</span></div>
+                `;
+            } else {
+                if (pct == 0) {
+                    innerHtmlAlc = 'Bármennyi folyadékot hozzaadhatsz, hogy a 0%-os alkohol 0%-os maradjon.';
+                } else {
+                    innerHtmlAlc = 'Nem allithato 0%-os alkohol nem 0%-os alkoholból.';
+                }
             }
         }
     }
 
-    outputHtml('output', innerHtmlAlc);
-}
-
-function reset_page() {
-    location.reload(); // reload page
+    outputHtml('resultAlcohol', innerHtmlAlc);
 }

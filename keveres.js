@@ -1,4 +1,4 @@
-// changed my mind yes gpt
+
 function validateQuantity(event) {
     const decimalPattern = /^[0-9]*[.,]?[0-9]*$/;
     const input = event.target.value;
@@ -30,25 +30,15 @@ let i = 2; // unique for each field
 let number_of_fields = 2;
 
 function addAlcohol() {
-    // add separator line
-    /*
-    let sepline = document.createElement('li');
-    sepline.className = 'sepHold';
-    sepline.innerHTML = `
-    <hr class="sep">
-    `;
-    document.getElementById('alcohols').appendChild(sepline);*/
-
     // add new field
     let newItem = document.createElement('li');
     newItem.id = `alcohol_${i}`;
     newItem.className = 'alcoholField';
     newItem.innerHTML = `
-    <label for="quantity_${i}">Mennyiség</label>
+    <label for="quantity_${i}">mennyiség</label>
     <input type="text" class="quantity" placeholder="0" name="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">
-    <label for="percent_${i}">Alkoholszázalék</label>
+    <label for="percent_${i}">alkoholszázalék</label>
     <input type="text" class="percentage" placeholder="0" name="percent_${i}" inputmode="decimal" oninput="validatePercent(event)">
-    <div class="placeholder">&nbsp</div>
     `;
     document.getElementById('alcohols').appendChild(newItem);
     ++i;
@@ -61,21 +51,12 @@ function addAlcohol() {
             let existingChild = field.querySelector('.delBtn');
             if (!existingChild) {
                 let delBtn = document.createElement('button');
-                delBtn.className = 'sideBtn delBtn';
-                delBtn.setAttribute("aria-label", "alkohol törlése");
+                delBtn.className = 'delBtn';
                 delBtn.innerHTML = '<span class="bar"></span><span class="bar"></span>';
                 delBtn.onclick = function () { deleteField(field.id); };
                 field.appendChild(delBtn);
             }
         }
-
-        let elems = document.getElementsByClassName('placeholder');
-
-        let elemArray = Array.from(elems);
-
-        elemArray.forEach( function(element) {
-            element.remove();
-        });
     }
 }
 
@@ -89,29 +70,11 @@ function deleteField(n) {
         
         // Convert the HTMLCollection to an array to use forEach
         let elementsArray = Array.from(elements);
-
-        // Remove delete buttons
+        
+        // Iterate over each element and remove it
         elementsArray.forEach(function(element) {
             element.remove(element);
         });
-
-        // generate placeholder div
-        let placeholder = document.createElement('div');
-        placeholder.className = 'placeholder';
-        placeholder.innerHTML = '&nbsp';
-
-        // get list of input fields
-        /*elements = document.getElementsByClassName('alcoholField');
-        Array.from(elements).forEach(function(element) {
-            element.appendChild(placeholder).cloneNode(true);
-            console.log(element);
-        });*/
-
-        let alcoholFields = document.getElementsByClassName('alcoholField');
-        for (let i = 0; i < alcoholFields.length; i++) {
-            alcoholFields[i].appendChild(placeholder.cloneNode(true)); // clone the placeholder to avoid moving the same element multiple times
-            //console.log(alcoholFields[i]);
-        }
     }
 }
 
@@ -153,10 +116,14 @@ function calclulateMix() {
     let resultAlcohol = document.createElement('div');
     resultAlcohol.id = 'resultAlcohol';
     resultAlcohol.innerHTML = `
-        <div id="LeftRes" class="result-container"><span>Mennyiség:</span><span id="resultQuantity">${folyadek}</span></div>
-        <hr id="sep">
-        <div id="RightRes" class="result-container"><span>Alkoholszázalék:</span><span id="resultPercentage">${resultAlcoholPercent}</span></div>
+        mennyiség: <span id="resultQuantity">${folyadek}</span>
+        <br>
+        alkoholszázalék: <span id="resultPercentage">${resultAlcoholPercent}</span>
     `;
-    document.getElementById('output').replaceWith(resultAlcohol);
+    document.getElementById('content').appendChild(resultAlcohol);
     isThereResult = true;
+}
+
+function reset_page() {
+    location.reload(); // reload page
 }
