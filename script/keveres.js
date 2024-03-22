@@ -46,8 +46,10 @@ function addAlcohol() {
     newItem.innerHTML = `
     <label for="quantity_${i}">Mennyiség</label>
     <input type="text" class="quantity" placeholder="0" name="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">
+    <button onclick="pasteText('quantity_${i}')">beillesztés</button>
     <label for="percent_${i}">Alkoholszázalék</label>
     <input type="text" class="percentage" placeholder="0" name="percent_${i}" inputmode="decimal" oninput="validatePercent(event)">
+    <button onclick="pasteText('percent_${i}')">beillesztés</button>
     <div class="placeholder">&nbsp</div>
     `;
     document.getElementById('alcohols').appendChild(newItem);
@@ -151,12 +153,12 @@ function calclulateMix() {
 
     // if it is the first time getting a result create a div for it and make its content
     let resultAlcohol = document.createElement('div');
-    resultAlcohol.id = 'resultAlcohol';
+    resultAlcohol.id = 'resultAlcohol-keveres';
     resultAlcohol.innerHTML = `
-        <div id="LeftRes" class="result-container"><span>Mennyiség:</span><span id="resultQuantity">${folyadek}</span></div>
+        <div id="LeftRes" class="result-container"><span>Mennyiség:</span><span id="resultQuantity">${folyadek}</span><button onclick="copyText('resultQuantity')">Copy</button></div>
         <hr id="sep">
-        <div id="RightRes" class="result-container"><span>Alkoholszázalék:</span><span id="resultPercentage">${resultAlcoholPercent}</span></div>
+        <div id="RightRes" class="result-container"><span>Alkoholszázalék:</span><span id="resultPercentage">${resultAlcoholPercent}</span><button onclick="copyText('resultPercentage')">Copy</button></div>
     `;
-    document.getElementById('output').replaceWith(resultAlcohol);
+    document.getElementById('keveres-output').replaceWith(resultAlcohol);
     isThereResult = true;
 }

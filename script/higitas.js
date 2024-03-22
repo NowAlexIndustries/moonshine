@@ -28,15 +28,17 @@ function validatePercent(event) {
 
 function outputHtml(givenId, text) {
     // check if exists
+
     let element = document.getElementById(givenId);
     if (element) {
         element.innerHTML = text;
     } else {
-        // create if it doesnt exist
+        // create if it doesn't exist
+        console.log(42);
         let resultAlcohol = document.createElement('div');
         resultAlcohol.id = givenId;
         resultAlcohol.innerHTML = text;
-        document.getElementById('output').replaceWith(resultAlcohol);
+        document.getElementById('higitas-output').replaceWith(resultAlcohol);
     }
 }
 
@@ -77,9 +79,9 @@ function calclulateDilution() {
                 const folyadek = pct * qt / dpct;
                 const plusszFolyadek = folyadek - qt;
                 innerHtmlAlc = `
-                <div id="LeftRes" class="result-container"><span>Mennyiség: </span><span id="resultQuantity">${folyadek}</span></div>
+                <div id="LeftRes" class="result-container"><span>Mennyiség: </span><span id="resultQuantity-higitas">${folyadek}</span><button onclick="copyText('resultQuantity-higitas')">Copy</button></div>
                 <hr id="sep">
-                <div id="RigthRes" class="result-container"><span>Hozzáadandó mennyiség: </span><span id="resultQuantityPlus">${plusszFolyadek}</span></div>
+                <div id="RigthRes" class="result-container"><span>Hozzáadandó mennyiség: </span><span id="resultQuantityPlus">${plusszFolyadek}</span><button onclick="copyText('resultQuantityPlus')">Copy</button></div>
                 `;
             } else {
                 if (pct == 0) {
@@ -91,5 +93,5 @@ function calclulateDilution() {
         }
     }
 
-    outputHtml('resultAlcohol', innerHtmlAlc);
+    outputHtml('resultAlcohol-higitas', innerHtmlAlc);
 }
