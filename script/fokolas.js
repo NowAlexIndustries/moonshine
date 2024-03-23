@@ -1,9 +1,9 @@
 
 const minAlcoholSzazalek = 10;
-const maxAlcoholSzazalek = 100;
+const maxAlcoholSzazalek = 98;
 
-const minHomerseklet = 10;
-const maxHomerseklet = 100;
+const minHomerseklet = 5;
+const maxHomerseklet = 30;
 
 function validatePercent(event) {
     const decimalPattern = /^[0-9]*[.,]?[0-9]*$/;
@@ -49,7 +49,7 @@ function mapRange(value, inputMin, inputMax, outputMin, outputMax) {
     return ((value - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin) + outputMin;
 }
 
-const alc = 'az alkoholszint';
+const alc = 'az hofok';
 const szaz = 'az alkoholszázalék';
 
 const low = 'tul kicsi';
@@ -97,6 +97,12 @@ function higitasHandler(data, x, y, minX, maxX, minY, maxY) {
 }
 
 function calculateFokolas() {
-    let homerseklet = parseFloat(document.getElementById('idk').value);
-    let mert_alkoholszazalek = parseFloat(document.getElementById('idk').value);
+    let homerseklet = parseFloat(document.getElementById('merttemp').value);
+    let mert_alkoholszazalek = parseFloat(document.getElementById('mertquantity').value);
+
+    let resultAlcohol = document.createElement('div');
+    let res = higitasHandler(corretionTable, homerseklet, mert_alkoholszazalek, minHomerseklet, maxHomerseklet, minAlcoholSzazalek, maxAlcoholSzazalek);
+    resultAlcohol.innerText = res;
+    document.getElementById('fokolas-output').replaceWith(resultAlcohol);
+    console.log(res);
 }

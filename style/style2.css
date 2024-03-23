@@ -166,10 +166,15 @@ label.input {
     padding: 1vw;
 }
 
-.alcoholField {
+.alcoholField div, .alcoholField-header div {
+    display: inline;
+    width: auto;
+}
+
+.alcoholField, .alcoholField-header{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }

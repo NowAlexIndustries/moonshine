@@ -44,13 +44,14 @@ function addAlcohol() {
     newItem.id = `alcohol_${i}`;
     newItem.className = 'alcoholField';
     newItem.innerHTML = `
-    <label for="quantity_${i}">Mennyiség</label>
-    <input type="text" class="quantity" placeholder="0" name="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">
-    <button onclick="pasteText('quantity_${i}')">beillesztés</button>
-    <label for="percent_${i}">Alkoholszázalék</label>
-    <input type="text" class="percentage" placeholder="0" name="percent_${i}" inputmode="decimal" oninput="validatePercent(event)">
-    <button onclick="pasteText('percent_${i}')">beillesztés</button>
-    <div class="placeholder">&nbsp</div>
+    <div>
+        <input type="text" class="quantity" placeholder="0" name="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">
+        <button onclick="pasteText('quantity_${i}')">beillesztés</button>
+    </div>
+    <div>
+        <input type="text" class="percentage" placeholder="0" name="percent_${i}" inputmode="decimal" oninput="validatePercent(event)">
+        <button onclick="pasteText('percent_${i}')">beillesztés</button>
+    </div>
     `;
     document.getElementById('alcohols').appendChild(newItem);
     ++i;

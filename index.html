@@ -19,6 +19,7 @@
     <script defer src="script/fokolas.js"></script>
     <script defer src="script/keveres.js"></script>
     <script defer src="script/higitas.js"></script>
+    <script defer src="assets/correctionTable.js"></script>
   </head>
   
   <body>
@@ -228,27 +229,71 @@
         </div>
         <div class="content" id="fokolás-oldal" style="display: none">
             Work in progress.
+            <div class="input-field body-container">
+              <label class="input" for="mertquantity">Mért alkoholszázalék</label>
+              <div>
+                <input class="input" type="text" placeholder="0" name="mertquantity" id="mertquantity" inputmode="decimal" oninput="validateQuantity(event)">
+                <button onclick="pasteText('mertquantity')">beillesztés</button>
+              </div>
+              <label class="input" for="merttemp">Mért alkoholhőmérséklet</label>
+              <div>
+                <input class="input" type="text" placeholder="0" name="merttemp" id="merttemp" inputmode="decimal" oninput="validatePercent(event)">
+                <button onclick="pasteText('merttemp')">beillesztés</button>
+              </div>
+          </div>
+          <div class="controls body-container">
+              <button class="btn button-style1" onclick="calculateFokolas()">Fokolás</button>
+              <button class="sideBtn" onclick="reset_page()">
+                  <svg
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fad"
+                  data-icon="kuka"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 448 512"
+                  class="svg-inline--fa fa-w-20 fa-5x"
+                >
+                  <g class="fa-group">
+                    <path
+                      fill="currentColor"
+                      d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
+                      class="grey"
+                    ></path>
+                  </g>
+                </svg>
+              </button>
+          </div>
+          <div id="fokolas-output" class="body-container">
+              <!--Placeholder for page outputs-->
+          </div>
         </div>
         <div class="content" id="keverés-oldal" style="display: none">
             <ul id="alcohols">
+              <li class="alcoholField-header">
+                <span>Mennyiség</span>
+                <span>Alkoholszázalék</span>
+              </li>
                 <!--initial 2 fields-->
                 <li id="alcohol_0" class="alcoholField">
-                        <label for="quantity_0">Mennyiség</label>
-                        <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
-                        <button onclick="pasteText('quantity_0')">beillesztés</button>
-                        <label for="percent_0">Alkoholszázalék</label>
-                        <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
-                        <button onclick="pasteText('percent_0')">beillesztés</button>
-                        <div class="placeholder">&nbsp</div>
+                  <div>
+                    <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+                    <button onclick="pasteText('quantity_0')">beillesztés</button>
+                  </div>
+                  <div>
+                    <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+                    <button onclick="pasteText('percent_0')">beillesztés</button>
+                  </div>
                 </li>
                 <li id="alcohol_1" class="alcoholField">
-                    <label for="quantity_1">Mennyiség</label>
+                  <div>
                     <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
                     <button onclick="pasteText('quantity_1')">beillesztés</button>
-                    <label for="percent_1">Alkoholszázalék</label>
+                  </div>
+                  <div>
                     <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
                     <button onclick="pasteText('percent_1')">beillesztés</button>
-                    <div class="placeholder">&nbsp</div>
+                  </div>
                 </li>
             </ul>
             <div class="controls">
@@ -282,18 +327,24 @@
         <div class="content" id="higítás-oldal" style="display: none">
             <div class="input-field body-container">
                 <label class="input" for="quantity">Mennyiség</label>
-                <input class="input" type="text" placeholder="0" name="quantity" id="quantity" inputmode="decimal" oninput="validateQuantity(event)">
-                <button onclick="pasteText('quantity')">beillesztés</button><br>
-                <label class="input" for="percent">Alkoholszázalék</label>
-                <input class="input" type="text" placeholder="0" name="percent" id="percentage" inputmode="decimal" oninput="validatePercent(event)">
-                <button onclick="pasteText('percent')">beillesztés</button><br>
-                <label class="input" for="desiredPercent">Kívánt alkoholszázalék</label>
-                <input class="input" type="text" placeholder="0" name="desiredPercent" id="desiredPercentage" inputmode="decimal" oninput="validatePercent(event)">
-                <button onclick="pasteText('desiredPercent')">beillesztés</button><br>
+                <div>
+                  <input class="input" type="text" placeholder="0" name="quantity" id="quantity" inputmode="decimal" oninput="validateQuantity(event)">
+                  <button onclick="pasteText('quantity')">beillesztés</button>
+                </div>
+                <label class="input" for="percentage">Alkoholszázalék</label>
+                <div>
+                  <input class="input" type="text" placeholder="0" name="percent" id="percentage" inputmode="decimal" oninput="validatePercent(event)">
+                  <button onclick="pasteText('percent')">beillesztés</button>
+                </div>
+                <label class="input" for="desiredPercentage">Kívánt alkoholszázalék</label>
+                <div>
+                  <input class="input" type="text" placeholder="0" name="desiredPercent" id="desiredPercentage" inputmode="decimal" oninput="validatePercent(event)">
+                  <button onclick="pasteText('desiredPercent')">beillesztés</button>
+                </div>
             </div>
             <div class="controls body-container">
                 <button class="btn button-style1" onclick="calclulateDilution()">Higítás</button>
-                <button class="btn button-style1" onclick="reset_page()">
+                <button class="sideBtn" onclick="reset_page()">
                     <svg
                     aria-hidden="true"
                     focusable="false"
