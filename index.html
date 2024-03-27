@@ -11,6 +11,7 @@
     <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <title>Pálinkafőző</title>
+    <script defer src="script/unified.js"></script>
     <script defer src="script/theme.js"></script>
     <script defer src="script/pageToggle.js"></script>
     <link rel="stylesheet" href="style/styleUnified.css">
@@ -229,20 +230,20 @@
         <div class="content" id="fokolas-page" style="display: none">
             Work in progress.
             <div class="input-field body-container">
-              <label class="input" for="mertquantity">Mért alkoholszázalék</label>
+              <label class="input" for="measuredQuantity">Mért alkoholszázalék</label>
               <div>
-                <input class="input" type="text" placeholder="0" name="mertquantity" id="mertquantity" inputmode="decimal" oninput="validateQuantity(event)">
-                <button onclick="pasteText('mertquantity')">beillesztés</button>
+                <input class="input" type="text" placeholder="0" name="measuredQuantity" id="measuredQuantity" inputmode="decimal" oninput="validateQuantity(event)">
+                <button onclick="pasteText('measuredQuantity')">beillesztés</button>
               </div>
-              <label class="input" for="merttemp">Mért alkoholhőmérséklet</label>
+              <label class="input" for="measuredTemp">Mért alkoholhőmérséklet</label>
               <div>
-                <input class="input" type="text" placeholder="0" name="merttemp" id="merttemp" inputmode="decimal" oninput="validatePercent(event)">
-                <button onclick="pasteText('merttemp')">beillesztés</button>
+                <input class="input" type="text" placeholder="0" name="measuredTemp" id="measuredTemp" inputmode="decimal" oninput="validatePercent(event)">
+                <button onclick="pasteText('measuredTemp')">beillesztés</button>
               </div>
           </div>
           <div class="controls body-container">
               <button class="btn button-style1" onclick="calculateFokolas()">Fokolás</button>
-              <button class="sideBtn" onclick="reset_page()">
+              <button class="sideBtn" onclick="reset_fokolas()">
                   <svg
                   aria-hidden="true"
                   focusable="false"
@@ -273,32 +274,32 @@
                 <span>Mennyiség</span>
                 <span>Alkoholszázalék</span>
               </li>
-                <!--initial 2 fields-->
-                <li id="alcohol_0" class="alcoholField">
-                  <div>
-                    <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
-                    <button onclick="pasteText('quantity_0')">beillesztés</button>
-                  </div>
-                  <div>
-                    <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
-                    <button onclick="pasteText('percent_0')">beillesztés</button>
-                  </div>
-                </li>
-                <li id="alcohol_1" class="alcoholField">
-                  <div>
-                    <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
-                    <button onclick="pasteText('quantity_1')">beillesztés</button>
-                  </div>
-                  <div>
-                    <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
-                    <button onclick="pasteText('percent_1')">beillesztés</button>
-                  </div>
-                </li>
+              <!--initial 2 fields-->
+              <li id="alcohol_0" class="alcoholField">
+                <div>
+                  <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+                  <button onclick="pasteText('quantity_0')">beillesztés</button>
+                </div>
+                <div>
+                  <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+                  <button onclick="pasteText('percent_0')">beillesztés</button>
+                </div>
+              </li>
+              <li id="alcohol_1" class="alcoholField">
+                <div>
+                  <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
+                  <button onclick="pasteText('quantity_1')">beillesztés</button>
+                </div>
+                <div>
+                  <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
+                  <button onclick="pasteText('percent_1')">beillesztés</button>
+                </div>
+              </li>
             </ul>
             <div class="controls">
                 <button class="btn circle addBtn" onclick="addAlcohol()" aria-label="új alkohol hozzáadása"><span class="br"></span><span class="br"></span></button>
-                <button class="button-style1" onclick="calclulateMix()">Keverés</button>
-                <button class="sideBtn" onclick="reset_page()">
+                <button class="button-style1" onclick="calclulateKeveres()">Keverés</button>
+                <button class="sideBtn" onclick="reset_keveres()">
                     <svg
                     aria-hidden="true"
                     focusable="false"
@@ -342,8 +343,8 @@
                 </div>
             </div>
             <div class="controls body-container">
-                <button class="btn button-style1" onclick="calclulateDilution()">Higítás</button>
-                <button class="sideBtn" onclick="reset_page()">
+                <button class="btn button-style1" onclick="calclulatehigitas()">Higítás</button>
+                <button class="sideBtn" onclick="reset_higitas()">
                     <svg
                     aria-hidden="true"
                     focusable="false"

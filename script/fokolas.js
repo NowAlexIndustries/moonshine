@@ -97,12 +97,10 @@ function higitasHandler(data, x, y, minX, maxX, minY, maxY) {
 }
 
 function calculateFokolas() {
-    let homerseklet = parseFloat(document.getElementById('merttemp').value);
-    let mert_alkoholszazalek = parseFloat(document.getElementById('mertquantity').value);
+    let homerseklet = parseFloat(document.getElementById('measuredTemp').value);
+    let mert_alkoholszazalek = parseFloat(document.getElementById('measuredQuantity').value);
 
-    let resultAlcohol = document.createElement('div');
     let res = higitasHandler(corretionTable, homerseklet, mert_alkoholszazalek, minHomerseklet, maxHomerseklet, minAlcoholSzazalek, maxAlcoholSzazalek);
-    resultAlcohol.innerText = res;
-    document.getElementById('fokolas-output').replaceWith(resultAlcohol);
+    document.getElementById('fokolas-output').innerHTML = res;
     console.log(res);
 }

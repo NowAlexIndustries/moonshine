@@ -26,23 +26,7 @@ function validatePercent(event) {
     }
 }
 
-function outputHtml(givenId, text) {
-    // check if exists
-
-    let element = document.getElementById(givenId);
-    if (element) {
-        element.innerHTML = text;
-    } else {
-        // create if it doesn't exist
-        console.log(42);
-        let resultAlcohol = document.createElement('div');
-        resultAlcohol.id = givenId;
-        resultAlcohol.innerHTML = text;
-        document.getElementById('higitas-output').replaceWith(resultAlcohol);
-    }
-}
-
-function calclulateDilution() {
+function calclulatehigitas() {
 
     let qt = parseFloat(document.getElementById('quantity').value);
     let pct = parseFloat(document.getElementById('percentage').value);
@@ -93,5 +77,5 @@ function calclulateDilution() {
         }
     }
 
-    outputHtml('resultAlcohol-higitas', innerHtmlAlc);
+    document.getElementById('higitas-output').innerHTML = innerHtmlAlc;
 }

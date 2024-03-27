@@ -118,12 +118,10 @@ function deleteField(n) {
     }
 }
 
-let isThereResult = false;
-
-function calclulateMix() {
+function calclulateKeveres() {
 
     const alcohols = document.getElementsByClassName('alcoholField');
-    let folyadek = 0;
+    let liquid = 0;
     let alcohol = 0;
     for (let alc of alcohols) {
         let qt = parseFloat(alc.querySelector('.quantity').value);
@@ -136,30 +134,17 @@ function calclulateMix() {
             pct = 0;
         }
 
-        folyadek += qt;
+        liquid += qt;
         alcohol += (pct / 100) * qt;
     }
 
     let resultAlcoholPercent = 0;
-    if (folyadek > 0) { // divide only with non 0
-        resultAlcoholPercent = (alcohol / folyadek) * 100;
+    if (liquid > 0) { // divide only with non 0
+        resultAlcoholPercent = (alcohol / liquid) * 100;
     }
 
-    // only change existing spans content
-    if (isThereResult) {
-        document.getElementById('resultQuantity').textContent = folyadek;
-        document.getElementById('resultPercentage').textContent = resultAlcoholPercent;
-        return;
-    }
-
-    // if it is the first time getting a result create a div for it and make its content
-    let resultAlcohol = document.createElement('div');
-    resultAlcohol.id = 'resultAlcohol-keveres';
-    resultAlcohol.innerHTML = `
-        <div id="LeftRes" class="result-container"><span>Mennyiség:</span><span id="resultQuantity">${folyadek}</span><button onclick="copyText('resultQuantity')">Copy</button></div>
-        <hr id="sep">
-        <div id="RightRes" class="result-container"><span>Alkoholszázalék:</span><span id="resultPercentage">${resultAlcoholPercent}</span><button onclick="copyText('resultPercentage')">Copy</button></div>
-    `;
-    document.getElementById('keveres-output').replaceWith(resultAlcohol);
-    isThereResult = true;
+    document.getElementById('keveres-output').innerHTML = `
+<div id="LeftRes" class="result-container"><span>Mennyiség:</span><span id="resultQuantity">${liquid}</span><button onclick="copyText('resultQuantity')">Copy</button></div>
+<hr id="sep">
+<div id="RightRes" class="result-container"><span>Alkoholszázalék:</span><span id="resultPercentage">${resultAlcoholPercent}</span><button onclick="copyText('resultPercentage')">Copy</button></div>`;
 }
