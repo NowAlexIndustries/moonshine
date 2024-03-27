@@ -267,3 +267,26 @@ li {
     --bg-primary: #ffffff;
     --bg-secondary: #e4e4e4;
 }
+
+.output {
+    /*placeholder style*/
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1rem;
+    background-color: #ffcb2f;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    height: 6rem;
+    padding: 1rem;
+}
+
+.warning {
+    background-color: #ffcccc; /* Light red background */
+    color: #cc0000; /* Dark red text color */
+    border: 2px solid #cc0000; /* Dark red border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for content */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}

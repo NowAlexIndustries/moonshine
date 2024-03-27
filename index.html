@@ -11,14 +11,11 @@
     <meta name="keywords" content="pálinka, fokolás, higítás, keverés, számol, számológép, moonshining">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <title>Pálinkafőző</title>
-    <script defer src="script/unified.js"></script>
-    <script defer src="script/theme.js"></script>
-    <script defer src="script/pageToggle.js"></script>
-    <link rel="stylesheet" href="style/styleUnified.css">
-    <script defer src="script/global.js"></script>
-    <script defer src="script/fokolas.js"></script>
-    <script defer src="script/keveres.js"></script>
-    <script defer src="script/higitas.js"></script>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="index.js"></script>
+    <script defer src="utility-script/theme.js"></script>
+    <script defer src="utility-script/pagination.js"></script>
+    <script defer src="utility-script/copyright-yearUpdater.js"></script>
     <script defer src="assets/correctionTable.js"></script>
   </head>
   
@@ -55,7 +52,7 @@
         </li>
   
         <li class="nav-item">
-          <span class="nav-link" onclick="showPage('about-page')">
+          <span class="nav-link" onclick="paginate('about-page')">
             <svg
                 aria-hidden="true"
                 focusable="false"
@@ -78,7 +75,7 @@
         </li>
   
         <li class="nav-item">
-          <span class="nav-link" onclick="showPage('fokolas-page')">
+          <span class="nav-link" onclick="paginate('fokolas-page')">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -101,7 +98,7 @@
         </li>
   
         <li class="nav-item">
-          <span class="nav-link" onclick="showPage('keveres-page')">
+          <span class="nav-link" onclick="paginate('keveres-page')">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -125,7 +122,7 @@
         </li>
   
         <li class="nav-item">
-          <span class="nav-link" onclick="showPage('higitas-page')">
+          <span class="nav-link" onclick="paginate('higitas-page')">
             <svg
               aria-hidden="true"
               focusable="false"
@@ -207,6 +204,12 @@
     </nav>
   
     <main>
+        <noscript>
+          <div class="warning">
+            <p>Jelenleg le van tiltva a böngésződben a JavaScript futtatása.</p>
+            <p>Az oldal működéséhez kérjük engedélyezd a JavaScript futtatását.</p>
+          </div>
+        </noscript>
         <div class="content" id="about-page">
             <h1>Pálinkafőzés</h1>
             <p>
@@ -264,7 +267,7 @@
                 </svg>
               </button>
           </div>
-          <div id="fokolas-output" class="body-container">
+          <div id="fokolas-output" class="body-container output" style="display: none">
               <!--Placeholder for page outputs-->
           </div>
         </div>
@@ -320,8 +323,8 @@
                   </svg>
                 </button>
             </div>
-            <div id="keveres-output">
-                <!--Placeholder for results-->
+            <div id="keveres-output" class="body-container output" style="display: none">
+                <!--Placeholder for page outputs-->
             </div>
         </div>
         <div class="content" id="higitas-page" style="display: none">
@@ -365,7 +368,7 @@
                   </svg>
                 </button>
             </div>
-            <div id="higitas-output" class="body-container">
+            <div id="higitas-output" class="body-container output" style="display: none">
                 <!--Placeholder for page outputs-->
             </div>
         </div>
