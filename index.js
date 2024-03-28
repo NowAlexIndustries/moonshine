@@ -197,7 +197,6 @@ function calculateFokolas() {
 
 /* keveres */
 
-// changed my mind yes gpt
 function validateQuantity(event) {
     const decimalPattern = /^[0-9]*[.,]?[0-9]*$/;
     const input = event.target.value;
@@ -244,11 +243,11 @@ function addAlcohol() {
     newItem.className = 'alcoholField';
     newItem.innerHTML = `
     <div>
-        <input type="text" class="quantity" placeholder="0" name="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">
+        <input type="text" class="quantity" placeholder="0" name="quantity_${i}" id="quantity_${i}" inputmode="decimal" oninput="validateQuantity(event)">
         <button onclick="pasteText('quantity_${i}')">beillesztés</button>
     </div>
     <div>
-        <input type="text" class="percentage" placeholder="0" name="percent_${i}" inputmode="decimal" oninput="validatePercent(event)">
+        <input type="text" class="percentage" placeholder="0" name="percent_${i}" id="percent_${i}" inputmode="decimal" oninput="validatePercent(event)">
         <button onclick="pasteText('percent_${i}')">beillesztés</button>
     </div>
     `;
@@ -361,31 +360,31 @@ function reset_fokolas() {
 
 function reset_keveres() {
     document.getElementById('alcohols').innerHTML = `
-<li class="alcoholField-header">
+  <li class="alcoholField-header">
     <span>Mennyiség</span>
     <span>Alkoholszázalék</span>
-</li>
-<!--initial 2 fields-->
-<li id="alcohol_0" class="alcoholField">
+  </li>
+  <!--initial 2 fields-->
+  <li id="alcohol_0" class="alcoholField">
     <div>
-      <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+      <input type="text" class="quantity" placeholder="0" name="quantity_0" id="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
       <button onclick="pasteText('quantity_0')">beillesztés</button>
     </div>
     <div>
-      <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+      <input type="text" class="percentage" placeholder="0" name="percent_0" id="percent_0" inputmode="decimal" oninput="validatePercent(event)">
       <button onclick="pasteText('percent_0')">beillesztés</button>
     </div>
-</li>
-<li id="alcohol_1" class="alcoholField">
+  </li>
+  <li id="alcohol_1" class="alcoholField">
     <div>
-      <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
+      <input type="text" class="quantity" placeholder="0" name="quantity_1" id="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
       <button onclick="pasteText('quantity_1')">beillesztés</button>
     </div>
     <div>
-      <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
+      <input type="text" class="percentage" placeholder="0" name="percent_1" id="percent_1" inputmode="decimal" oninput="validatePercent(event)">
       <button onclick="pasteText('percent_1')">beillesztés</button>
     </div>
-</li>
+  </li>
     `;
 
     keveresOutput.innerHTML = '';
@@ -412,13 +411,13 @@ function copyText(id) {
     console.log("Text copied to localStorage: " + text);
 }
 
-function pasteText(name) {
+function pasteText(id) {
     // Retrieve text from localStorage
     let text = localStorage.getItem('copiedText');
   
     // If text exists, set it to the element
     if (text !== null) {
-        let element = document.getElementsByName(name)[0];
+        let element = document.getElementById(id);
         element.value = text;
         element.dispatchEvent(new Event('input')); // trigger an input event, so oninput will call validator function, so percentage and other values get validated just like when you input them by hand or from the real keyboard
         console.log("Text pasted from localStorage: " + text);

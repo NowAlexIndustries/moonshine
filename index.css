@@ -273,9 +273,9 @@ li {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     background-color: #ffcb2f;
-    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.5);
     height: 6rem;
     padding: 1rem;
 }

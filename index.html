@@ -280,21 +280,21 @@
               <!--initial 2 fields-->
               <li id="alcohol_0" class="alcoholField">
                 <div>
-                  <input type="text" class="quantity" placeholder="0" name="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
+                  <input type="text" class="quantity" placeholder="0" name="quantity_0" id="quantity_0" inputmode="decimal" oninput="validateQuantity(event)">
                   <button onclick="pasteText('quantity_0')">beillesztés</button>
                 </div>
                 <div>
-                  <input type="text" class="percentage" placeholder="0" name="percent_0" inputmode="decimal" oninput="validatePercent(event)">
+                  <input type="text" class="percentage" placeholder="0" name="percent_0" id="percent_0" inputmode="decimal" oninput="validatePercent(event)">
                   <button onclick="pasteText('percent_0')">beillesztés</button>
                 </div>
               </li>
               <li id="alcohol_1" class="alcoholField">
                 <div>
-                  <input type="text" class="quantity" placeholder="0" name="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
+                  <input type="text" class="quantity" placeholder="0" name="quantity_1" id="quantity_1" inputmode="decimal" oninput="validateQuantity(event)">
                   <button onclick="pasteText('quantity_1')">beillesztés</button>
                 </div>
                 <div>
-                  <input type="text" class="percentage" placeholder="0" name="percent_1" inputmode="decimal" oninput="validatePercent(event)">
+                  <input type="text" class="percentage" placeholder="0" name="percent_1" id="percent_1" inputmode="decimal" oninput="validatePercent(event)">
                   <button onclick="pasteText('percent_1')">beillesztés</button>
                 </div>
               </li>
@@ -337,12 +337,12 @@
                 <label class="input" for="percentage">Alkoholszázalék</label>
                 <div>
                   <input class="input" type="text" placeholder="0" name="percent" id="percentage" inputmode="decimal" oninput="validatePercent(event)">
-                  <button onclick="pasteText('percent')">beillesztés</button>
+                  <button onclick="pasteText('percentage')">beillesztés</button>
                 </div>
                 <label class="input" for="desiredPercentage">Kívánt alkoholszázalék</label>
                 <div>
                   <input class="input" type="text" placeholder="0" name="desiredPercent" id="desiredPercentage" inputmode="decimal" oninput="validatePercent(event)">
-                  <button onclick="pasteText('desiredPercent')">beillesztés</button>
+                  <button onclick="pasteText('desiredPercentage')">beillesztés</button>
                 </div>
             </div>
             <div class="controls body-container">
