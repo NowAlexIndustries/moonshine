@@ -281,6 +281,7 @@ li {
 }
 
 .warning {
+    /* placeholder style */
     background-color: #ffcccc; /* Light red background */
     color: #cc0000; /* Dark red text color */
     border: 2px solid #cc0000; /* Dark red border */
@@ -289,4 +290,9 @@ li {
     font-size: 16px; /* Font size */
     font-weight: bold; /* Bold text */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+.active-nav {
+    /* placeholder style */
+    background-color: red;
 }
